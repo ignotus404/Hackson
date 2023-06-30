@@ -4,12 +4,34 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
+    #region MazeGenerator
     [Header("壁をまとめたオブジェクト")]
     [SerializeField] GameObject MazeGround; //迷路の壁全部をまとめるオブジェクト
 
     int MazeX;
     int MazeY;
     int[,] Maze; //迷路のデータを格納する配列
+    #endregion
+    
+    #region GameManager
+    [Header("プレイヤー1"),SerializeField]GameObject Player1;
+    [Header("プレイヤー1スポーン地点"),SerializeField]Transform Player1Spawn;
+    [Header("プレイヤー2"),SerializeField]GameObject Player2;
+    [Header("プレイヤー2スポーン地点"),SerializeField]Transform Player2Spawn;
+    [Header("プレイヤー3"),SerializeField]GameObject Player3;
+    [Header("プレイヤー3スポーン地点"),SerializeField]Transform Player3Spawn;
+    [Header("プレイヤー4"),SerializeField]GameObject Player4;
+    [Header("プレイヤー4スポーン地点"),SerializeField]Transform Player4Spawn;
+    [Header("環境敵"),SerializeField]GameObject Enemy;
+    [Header("環境敵スポーン数"),SerializeField]int EnemySpawnNum;
+    [Header("ゴール地点"),SerializeField]GameObject GoalPoint;
+    [Header("ゴールフラグ"),SerializeField]static bool GoalFlag;
+
+    Vector3 Player1SpawnPoint;
+    Vector3 Player2SpawnPoint;
+    Vector3 Player3SpawnPoint;
+    Vector3 Player4SpawnPoint;
+    #endregion
 
     //マップ生成
     void Awake()
@@ -45,6 +67,15 @@ public class MazeGenerator : MonoBehaviour
             }
         }
 
+        //ゴール地点にある壁を取り除く
+        for(int i = (MazeX/2) - 1; i < (MazeX/2) + 2; i++)
+        {
+            for(int j = (MazeY/2) - 1; j < (MazeY/2) + 2; j++)
+            {
+                Maze[i, j] = 0;
+            }
+        }
+
         //配列どおりにマップを生成する
         for (int i = 0; i < MazeX; i++)
         {
@@ -58,6 +89,37 @@ public class MazeGenerator : MonoBehaviour
                 {
                     MazeObject[i, j].SetActive(false);
                 }
+            }
+        }
+    }
+
+    void Start()
+    {
+        //プレイヤーのスポーン地点を取得
+        Player1SpawnPoint = Player1Spawn.position;
+        Player2SpawnPoint = Player2Spawn.position;
+        Player3SpawnPoint = Player3Spawn.position;
+        Player4SpawnPoint = Player4Spawn.position;
+
+        //プレイヤーをスポーン
+        Instantiate(Player1, Player1SpawnPoint, Quaternion.identity);
+        Instantiate(Player2, Player2SpawnPoint, Quaternion.identity);
+        Instantiate(Player3, Player3SpawnPoint, Quaternion.identity);
+        Instantiate(Player4, Player4SpawnPoint, Quaternion.identity);
+
+        //環境敵をスポーン
+        for (int i = 0; i < EnemySpawnNum; i++)
+        {
+            int x = Random.Range(0, MazeX);
+            int y = Random.Range(0, MazeY);
+
+            if (Maze[x, y] == 0)
+            {
+                Instantiate(Enemy, new Vector3(x, 0, y), Quaternion.identity);
+            }
+            else
+            {
+                i--;
             }
         }
     }
