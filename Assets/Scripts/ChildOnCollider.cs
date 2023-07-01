@@ -10,7 +10,7 @@ public class ChildOnCollider : MonoBehaviour
     {
         if (collider.gameObject.tag == "Wall")
         {
-            Debug.Log("壁に当たった");
+            // Debug.Log("壁に当たった");
             isWall = true;
         }
     }
