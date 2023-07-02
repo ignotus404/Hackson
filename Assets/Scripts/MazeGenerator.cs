@@ -11,6 +11,7 @@ public class MazeGenerator : MonoBehaviour
     int MazeX;
     int MazeY;
     int[,] Maze; //迷路のデータを格納する配列
+    GameObject[,] MazeObject; //迷路のオブジェクトを格納する配列 
     #endregion
     
     #region GameManager
@@ -32,6 +33,7 @@ public class MazeGenerator : MonoBehaviour
     Vector3 Player3SpawnPoint;
     Vector3 Player4SpawnPoint;
     #endregion
+    
 
     //マップ生成
     void Awake()
@@ -39,7 +41,7 @@ public class MazeGenerator : MonoBehaviour
         MazeX = MazeGround.transform.childCount;
         MazeY = MazeGround.transform.GetChild(0).childCount;
 
-        GameObject[,] MazeObject = new GameObject[MazeX, MazeY];
+        MazeObject = new GameObject[MazeX, MazeY];
 
         Debug.Log(MazeX);
         Debug.Log(MazeY);
@@ -115,7 +117,9 @@ public class MazeGenerator : MonoBehaviour
 
             if (Maze[x, y] == 0)
             {
-                Instantiate(Enemy, new Vector3(x, 0, y), Quaternion.identity);
+                Debug.Log("敵スポーン");
+                Vector3 EnemySpawnPoint = MazeObject[x, y].transform.position;
+                Instantiate(Enemy, EnemySpawnPoint, Quaternion.identity);
             }
             else
             {
