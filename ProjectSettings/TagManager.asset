@@ -10,14 +10,15 @@ TagManager:
   - Wall
   - SpawnPoint
   - EnemyAttack
+  - UndestroyableWall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Map
   - 
   - 
   - 

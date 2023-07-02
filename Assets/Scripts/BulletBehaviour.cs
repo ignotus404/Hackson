@@ -6,6 +6,7 @@ public class BulletBehaviour : MonoBehaviour
 {
     float time;
     public GameObject Bullet;
+    public GameObject[] ItemPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,11 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         //敵に当たったら敵ごと消滅
-        if (other.gameObject.tag == "Enemy") {
+        if (other.gameObject.tag == "Enemy") 
+        {
+            //アイテムドロップ処理
+            Instantiate(ItemPrefab[Random.Range(0, ItemPrefab.Length)], other.transform.position, Quaternion.identity);
+
             Destroy(other.gameObject);
             Destroy(Bullet);
         }

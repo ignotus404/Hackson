@@ -128,6 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 4416781337145141510}
+  ItemPrefab:
+  - {fileID: 8466299112420245048, guid: eb94885e577f4e14caea38cedb81d95b, type: 3}
+  - {fileID: 7833908047912563825, guid: 83efc070ec49c6c42a9b51bbb3ecab5c, type: 3}
+  - {fileID: 8221939515285700863, guid: 5f92bc6c9b2b4c146a919f76a7aa8273, type: 3}
 --- !u!1 &4416781337145141510
 GameObject:
   m_ObjectHideFlags: 0

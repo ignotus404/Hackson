@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MazeGenerator : MonoBehaviour
 {
@@ -26,7 +27,10 @@ public class MazeGenerator : MonoBehaviour
     [Header("環境敵"),SerializeField]GameObject Enemy;
     [Header("環境敵スポーン数"),SerializeField]int EnemySpawnNum;
     [Header("ゴール地点"),SerializeField]GameObject GoalPoint;
-    [Header("ゴールフラグ"),SerializeField]static bool GoalFlag;
+    [Header("プレイヤーゴールフラグ"),SerializeField]static public bool PlayerGoalFlag;
+    [Header("敵ゴールフラグ"),SerializeField]static public bool EnemyGoalFlag;
+    [Header("ゴール画面"),SerializeField]GameObject GoalScreen;
+    [Header("ゲームオーバー画面"),SerializeField]GameObject GameOverScreen;
 
     Vector3 Player1SpawnPoint;
     Vector3 Player2SpawnPoint;
@@ -124,6 +128,37 @@ public class MazeGenerator : MonoBehaviour
             else
             {
                 i--;
+            }
+        }
+    }
+    
+    void Update()
+    {
+        if(!PlayerGoalFlag || !EnemyGoalFlag)
+        {
+            PlayerGoalFlag = GoalPoint.GetComponent<GoalPoint>().PlayerGoalFlag;
+            EnemyGoalFlag = GoalPoint.GetComponent<GoalPoint>().EnemyGoalFlag;
+        }
+        
+        //プレイヤーがゴールしたら
+        if(PlayerGoalFlag == true)
+        {
+            Debug.Log("ゴール");
+            GoalScreen.SetActive(true);
+        }
+
+        //敵がゴールしたら
+        if(EnemyGoalFlag == true)
+        {
+            Debug.Log("ゴール");
+            GoalScreen.SetActive(true);
+        }
+
+        if(PlayerGoalFlag || EnemyGoalFlag)
+        {
+            if(Input.GetKeyDown("Escape") || Input.GetKeyDown("r"))
+            {
+                SceneManager.LoadScene("Title");
             }
         }
     }

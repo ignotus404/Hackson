@@ -1,4 +1,13 @@
+Library\Bee\artifacts\mvdfrm\Unity.Burst.ref.dll_14316E70964BB953.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.InputSystem.ref.dll_29109081F030768C.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Mathematics.ref.dll_14D1A32168A0AD59.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.ProGrids.ref.dll_5DE2450327C5E4F3.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipeline.Universal.ShaderLibrary.ref.dll_3F999310E5378770.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.Runtime.ref.dll_CA9A1FD000BA57CF.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Core.ShaderLibrary.ref.dll_86BC04EDBBAD6DBD.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll_2AC6C82FC7FB4B7D.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Universal.Runtime.ref.dll_F2E669F900AB6F15.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.RenderPipelines.Universal.Shaders.ref.dll_334E79423F1A0A4B.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Services.Core.Analytics.ref.dll_D88AC28E7AE24D0A.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Services.Core.Environments.ref.dll_29C0C4FBB515A292.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Services.Core.ref.dll_8733AE466239FA82.mvfrm
@@ -74,4 +83,9 @@ Library\Bee\artifacts\mvdfrm\UnityEngine.VirtualTexturingModule.dll_D3D65D443BB4
 Library\Bee\artifacts\mvdfrm\UnityEngine.VRModule.dll_DE7DCF54C9B60C88.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.WindModule.dll_09D779CABC5A9EA4.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.XRModule.dll_113C925952F059E6.mvfrm
-Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_62EF5E1940665B26.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Burst.Cecil.dll_27A6ED52C67B0A17.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Burst.Cecil.Mdb.dll_A89A8ACC14CA9B14.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Burst.Cecil.Pdb.dll_BFED033B937F9C97.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Burst.Cecil.Rocks.dll_0E673D882218A597.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.Burst.Unsafe.dll_B8C5EFF70BC2E04C.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_80B93C17F5EBDF52.mvfrm
