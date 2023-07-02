@@ -33,6 +33,7 @@ public class MazeGenerator : MonoBehaviour
     Vector3 Player3SpawnPoint;
     Vector3 Player4SpawnPoint;
     #endregion
+    
 
     //マップ生成
     void Awake()
